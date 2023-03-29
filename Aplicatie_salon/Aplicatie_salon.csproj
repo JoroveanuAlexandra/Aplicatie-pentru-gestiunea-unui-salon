@@ -49,5 +49,15 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\AdministrareFisier\AdministrareFisier.csproj">
+      <Project>{b60d70ff-1f99-4e32-b956-0a0a45252dc1}</Project>
+      <Name>AdministrareFisier</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\LibrarieModele\LibrarieModele.csproj">
+      <Project>{576754de-d761-474e-ac1b-6a61fb6d050f}</Project>
+      <Name>LibrarieModele</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

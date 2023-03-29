@@ -1,0 +1,12 @@
+D:\Facultate\Anul_2\Semestrul_2\PIU\Aplicatie_salon\Aplicatie_salon\obj\Debug\Aplicatie_salon.csproj.AssemblyReference.cache
+D:\Facultate\Anul_2\Semestrul_2\PIU\Aplicatie_salon\Aplicatie_salon\obj\Debug\Aplicatie_salon.csproj.CoreCompileInputs.cache
+D:\Facultate\Anul_2\Semestrul_2\PIU\Aplicatie_salon\Aplicatie_salon\bin\Debug\Aplicatie_salon.exe.config
+D:\Facultate\Anul_2\Semestrul_2\PIU\Aplicatie_salon\Aplicatie_salon\bin\Debug\Aplicatie_salon.exe
+D:\Facultate\Anul_2\Semestrul_2\PIU\Aplicatie_salon\Aplicatie_salon\bin\Debug\Aplicatie_salon.pdb
+D:\Facultate\Anul_2\Semestrul_2\PIU\Aplicatie_salon\Aplicatie_salon\bin\Debug\AdministrareFisier.dll
+D:\Facultate\Anul_2\Semestrul_2\PIU\Aplicatie_salon\Aplicatie_salon\bin\Debug\LibrarieModele.dll
+D:\Facultate\Anul_2\Semestrul_2\PIU\Aplicatie_salon\Aplicatie_salon\bin\Debug\AdministrareFisier.pdb
+D:\Facultate\Anul_2\Semestrul_2\PIU\Aplicatie_salon\Aplicatie_salon\bin\Debug\LibrarieModele.pdb
+D:\Facultate\Anul_2\Semestrul_2\PIU\Aplicatie_salon\Aplicatie_salon\obj\Debug\Aplicatie_salon.csproj.CopyComplete
+D:\Facultate\Anul_2\Semestrul_2\PIU\Aplicatie_salon\Aplicatie_salon\obj\Debug\Aplicatie_salon.exe
+D:\Facultate\Anul_2\Semestrul_2\PIU\Aplicatie_salon\Aplicatie_salon\obj\Debug\Aplicatie_salon.pdb

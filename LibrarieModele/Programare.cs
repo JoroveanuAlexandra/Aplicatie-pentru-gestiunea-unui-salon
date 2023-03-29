@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace LibrarieModele
 {
-    class Class1
+    class Programare
     {
+        private DateTime data_start;
+        private string nume_client;
+        public Angajat angajat;
+        public Serviciu serviciu;
     }
 }

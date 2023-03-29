@@ -1,0 +1,9 @@
+D:\Facultate\Anul_2\Semestrul_2\PIU\Aplicatie_salon\AdministrareFisier\bin\Debug\AdministrareFisier.dll
+D:\Facultate\Anul_2\Semestrul_2\PIU\Aplicatie_salon\AdministrareFisier\bin\Debug\AdministrareFisier.pdb
+D:\Facultate\Anul_2\Semestrul_2\PIU\Aplicatie_salon\AdministrareFisier\bin\Debug\LibrarieModele.dll
+D:\Facultate\Anul_2\Semestrul_2\PIU\Aplicatie_salon\AdministrareFisier\bin\Debug\LibrarieModele.pdb
+D:\Facultate\Anul_2\Semestrul_2\PIU\Aplicatie_salon\AdministrareFisier\obj\Debug\AdministrareFisier.csproj.AssemblyReference.cache
+D:\Facultate\Anul_2\Semestrul_2\PIU\Aplicatie_salon\AdministrareFisier\obj\Debug\AdministrareFisier.csproj.CoreCompileInputs.cache
+D:\Facultate\Anul_2\Semestrul_2\PIU\Aplicatie_salon\AdministrareFisier\obj\Debug\AdministrareFisier.csproj.CopyComplete
+D:\Facultate\Anul_2\Semestrul_2\PIU\Aplicatie_salon\AdministrareFisier\obj\Debug\AdministrareFisier.dll
+D:\Facultate\Anul_2\Semestrul_2\PIU\Aplicatie_salon\AdministrareFisier\obj\Debug\AdministrareFisier.pdb
