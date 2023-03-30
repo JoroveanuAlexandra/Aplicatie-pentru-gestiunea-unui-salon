@@ -36,33 +36,33 @@ namespace Aplicatie_salon
                         int idAngajati = nrAngajat + 1;
                         Console.WriteLine("Introdu numele angajatului {0}:", idAngajati);
                         string Nume = Console.ReadLine();
-                        Console.WriteLine("Introdu prenumele angajatului: {0}", idAngajati);
+                        Console.WriteLine("Introdu prenumele angajatului {0}: ", idAngajati);
                         string Prenume = Console.ReadLine();
-                        Console.WriteLine("Introdu functia angajatului: {0}", idAngajati);
+                        Console.WriteLine("Introdu functia angajatului {0}:", idAngajati);
                         string Functia = Console.ReadLine();
-                        Console.Write("Introdu numarul de telefon al angajatului: {0}", idAngajati);
+                        Console.Write("Introdu numarul de telefon al angajatului {0}:", idAngajati);
                         string Nr_Telefon = Console.ReadLine();
-                        Console.WriteLine("Introdu salariul angajatului: {0}", idAngajati);
+                        Console.WriteLine("Introdu salariul angajatului {0}:", idAngajati);
                         int Salariu = Convert.ToInt32(Console.ReadLine());
-                        Console.WriteLine("Introdu data angajarii angajatului: {0}", idAngajati);
+                        Console.WriteLine("Introdu data angajarii angajatului {0}:", idAngajati);
                         string data = Console.ReadLine();
                         DateTime DataAngajarii = DateTime.ParseExact(data, "yyyy-MM-dd", null);
-
                         angajat = new Angajat(idAngajati, Nume, Prenume, Functia, Salariu, Nr_Telefon, DataAngajarii);
                         SALON.Add(angajat);
                         nrAngajat++;
 
                         break;
                     case "A":
-
-                        for (int i = 0; i < SALON.Count; i++)
+                        Console.WriteLine(string.Join("\n", SALON));
+                        /*for (int i = 0; i < SALON.Count; i++)
                         {
                             Console.WriteLine(SALON[i].Info());
                         }
+                        */
                         break;
                     case "F":
-                        Angajat[] angajati = adminAngajat.GetAngajat(out nrAngajat);
-                        AfisareAngajati(angajati, nrAngajat);
+                        SALON = adminAngajat.GetAngajat(out nrAngajat);
+                        Console.WriteLine(string.Join("\n", SALON));
                         break;
                     case "S":
                         idAngajati = nrAngajat + 1;

@@ -13,7 +13,9 @@ namespace AdministrareFisier
         public class Administrare_FisierText
         {
             private const int NR_MAX_ANGAJATI = 50;
+            private const int NR_MAX_SERVICII = 50;
             private string numeFisier;
+            private string numeFisierServicii;
 
             public Administrare_FisierText(string numeFisier)
             {
@@ -29,34 +31,48 @@ namespace AdministrareFisier
                     streamWriterFisierText.WriteLine(angajat.ConversieLaSir_PentruFisier());
                 }
             }
-            public Angajat[] GetAngajat(out int nrAngajat)
+            public List<Angajat> GetAngajat(out int nrAngajat)
             {
-                Angajat[] angajat= new Angajat[NR_MAX_ANGAJATI];
-                using (StreamReader stream = new StreamReader(numeFisier))
+                Angajat[] angajat = new Angajat[NR_MAX_ANGAJATI];
+                using (StreamReader stream = new StreamReader(numeFisier, true))
                 {
                     string linieFisier;
                     nrAngajat = 0;
                     while ((linieFisier = stream.ReadLine()) != null)
                     {
-                        string[] items= linieFisier.Split(Angajat.SEPARATOR_SECUNDAR_FISIER);
-                        int ID, Salariu;
-                        DateTime DataAngajarii;
-                        Int32.TryParse(items[0], out ID);
-                        Int32.TryParse(items[4], out Salariu);
-                        DateTime data = DateTime.ParseExact(items[6], "yyyy-MM-dd", System.Globalization.CultureInfo.InvariantCulture);
-                        if (items.Length != 6)
-                        {
-                            Console.WriteLine("Numarul de elemente nu corespunde la linia {" + linieFisier + "}.");
-                        }
-                        else
-                        {
-                            angajat[nrAngajat++] = new Angajat(ID, items[1], items[2], items[3], Salariu, items[5], data);
-                        }
+                        angajat[nrAngajat++] = new Angajat(linieFisier);
                     }
 
                 }
-                return angajat;
+                List<Angajat> ang = new List<Angajat>();
+                ang = angajat.ToList();
+                return ang;
+            }
+        
+        public void AddServiciu(Serviciu serviciu)
+        {
+            using (StreamWriter streamWriterFisierText = new StreamWriter(numeFisier))
+            {
+                streamWriterFisierText.WriteLine(serviciu.ConversieLaSir_PentruFisier());
             }
         }
+        public List<Serviciu> GetServiciu(out int nrServiciu)
+        {
+            Serviciu[] serviciu = new Serviciu[NR_MAX_SERVICII];
+            using (StreamReader stream = new StreamReader(numeFisier))
+            {
+                string linieFisier;
+                nrServiciu = 0;
+                while ((linieFisier = stream.ReadLine()) != null)
+                {
+                    serviciu[nrServiciu++] = new Serviciu(linieFisier);
+                }
+
+            }
+            List<Serviciu> ser= new List<Serviciu>();
+            ser = serviciu.ToList();
+            return ser;
+        }
     }
+}
 }
