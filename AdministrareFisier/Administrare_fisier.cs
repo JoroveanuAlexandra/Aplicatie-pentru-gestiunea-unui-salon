@@ -15,7 +15,7 @@ namespace AdministrareFisier
             private const int NR_MAX_ANGAJATI = 50;
             private const int NR_MAX_SERVICII = 50;
             private string numeFisier;
-            private string numeFisierServicii;
+            // private string numeFisierServicii;
 
             public Administrare_FisierText(string numeFisier)
             {
@@ -48,31 +48,32 @@ namespace AdministrareFisier
                 ang = angajat.ToList();
                 return ang;
             }
-        
-        public void AddServiciu(Serviciu serviciu)
-        {
-            using (StreamWriter streamWriterFisierText = new StreamWriter(numeFisier))
-            {
-                streamWriterFisierText.WriteLine(serviciu.ConversieLaSir_PentruFisier());
-            }
-        }
-        public List<Serviciu> GetServiciu(out int nrServiciu)
-        {
-            Serviciu[] serviciu = new Serviciu[NR_MAX_SERVICII];
-            using (StreamReader stream = new StreamReader(numeFisier))
-            {
-                string linieFisier;
-                nrServiciu = 0;
-                while ((linieFisier = stream.ReadLine()) != null)
-                {
-                    serviciu[nrServiciu++] = new Serviciu(linieFisier);
-                }
 
+            public void AddServiciu(Serviciu serviciu)
+            {
+                using (StreamWriter streamWriterFisierText = new StreamWriter(numeFisier))
+                {
+                    streamWriterFisierText.WriteLine(serviciu.ConversieLaSir_PentruFisier());
+                }
             }
-            List<Serviciu> ser= new List<Serviciu>();
-            ser = serviciu.ToList();
-            return ser;
+            public List<Serviciu> GetServiciu(out int nrServiciu)
+            {
+                Serviciu[] serviciu = new Serviciu[NR_MAX_SERVICII];
+                using (StreamReader stream = new StreamReader(numeFisier))
+                {
+                    string linieFisier;
+                    nrServiciu = 0;
+                    while ((linieFisier = stream.ReadLine()) != null)
+                    {
+                        serviciu[nrServiciu++] = new Serviciu(linieFisier);
+                    }
+
+                }
+                List<Serviciu> ser = new List<Serviciu>();
+                ser = serviciu.ToList();
+                return ser;
+            }
+
         }
     }
-}
 }

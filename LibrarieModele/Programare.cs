@@ -15,13 +15,13 @@ namespace LibrarieModele
         private const char SEPARATOR_PRINCIPAL_FISIER = ';';
         private const char SEPARATOR_SECUNDAR_FISIER = ' ';
 
-        public Programare (DateTime Data_Start, string Nume_Client, Angajat angajat, Serviciu serviciu)
+        public Programare(DateTime Data_Start, string Nume_Client, Angajat angajat, Serviciu serviciu)
         {
             this.data_start = data_start;
             this.nume_client = nume_client;
             this.angajat = angajat;
             this.serviciu = serviciu;
-            
+
         }
         public string Info()
         {

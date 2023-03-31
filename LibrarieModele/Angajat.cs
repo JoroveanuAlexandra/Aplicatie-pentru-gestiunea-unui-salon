@@ -21,8 +21,12 @@ namespace LibrarieModele
         public int ID_AN { get; set; }
         public string Nume { get; set; }
         public string Prenume { get; set; }
+        public string NumeComplet { get
+            {
+                return Nume + " " + Prenume;
+            } }
         public int Salariu { get; set; }
-        public string Functie{ get; set; }
+        public string Functie { get; set; }
         public string Nr_Telefon { get; set; }
         public DateTime DataAngajarii { get; set; }
 
@@ -41,7 +45,7 @@ namespace LibrarieModele
             Salariu = Convert.ToInt32(dateFisier[SALARIU]);
             Nr_Telefon = dateFisier[NR_TELEFON];
             Console.WriteLine(dateFisier[DATA_AN]);
-            DataAngajarii = Convert.ToDateTime(dateFisier[DATA_AN].Split(' ')[0]) ;
+            DataAngajarii = Convert.ToDateTime(dateFisier[DATA_AN].Split(' ')[0]);
         }
         public Angajat(int ID_AN, string Nume, string Prenume, string Functie, int Salariu, string Nr_Telefon, DateTime DataAngajarii)
         {
@@ -51,7 +55,7 @@ namespace LibrarieModele
             this.Functie = Functie;
             this.Salariu = Salariu;
             this.Nr_Telefon = Nr_Telefon;
-            
+
             this.DataAngajarii = DataAngajarii;
         }
 
@@ -63,9 +67,10 @@ namespace LibrarieModele
                    (Prenume ?? "NECUNOSCUT"),
                    (Functie ?? "NECUNOSCUT"),
                    (Salariu.ToString() ?? "NECUNOSCUT"),
-                   (Nr_Telefon ?? "NECUNOSCUT"),
-                   (DataAngajarii.ToString() ?? "NECUNOSCUT"));
-                              
+                   (DataAngajarii.ToString() ?? "NECUNOSCUT"),
+                   (Nr_Telefon ?? "NECUNOSCUT"));
+
+
             return info;
         }
         public override string ToString()
@@ -76,8 +81,9 @@ namespace LibrarieModele
                    (Prenume ?? "NECUNOSCUT"),
                    (Functie ?? "NECUNOSCUT"),
                    (Salariu.ToString() ?? "NECUNOSCUT"),
-                   (Nr_Telefon ?? "NECUNOSCUT"),
-                   (DataAngajarii.ToString() ?? "NECUNOSCUT"));
+                   (DataAngajarii.ToString() ?? "NECUNOSCUT"),
+                (Nr_Telefon ?? "NECUNOSCUT"));
+
 
             return info;
         }
@@ -89,12 +95,19 @@ namespace LibrarieModele
                             (Nume ?? "NECUNOSCUT"),
                             (Prenume ?? "NECUNOSCUT"),
                             (Functie ?? "NECUNOSCUT"),
-                            (Salariu.ToString() ?? "NECUNOSCUT"),                           
-                            (Nr_Telefon.ToString() ?? "NECUNOSCUT"),
-                            (DataAngajarii.ToString() ?? "NECUNOSCUT"));
+                            (Salariu.ToString() ?? "NECUNOSCUT"),
+                            (DataAngajarii.ToString() ?? "NECUNOSCUT"),
+            (Nr_Telefon.ToString() ?? "NECUNOSCUT"));
+
             return obiectAngajatiPentruFisier;
 
         }
+        public bool CautareDupaNume (string NumeComplet)
+        {
 
+            if (NumeComplet.ToUpper().CompareTo(NumeComplet.ToUpper()) == 0)
+                return true;
+            return false;
+        }
     }
 }

@@ -1,0 +1,7 @@
+D:\Facultate\Anul_2\Semestrul_2\PIU\Aplicatie_salon\Tema 4\bin\Debug\Tema 4.exe.config
+D:\Facultate\Anul_2\Semestrul_2\PIU\Aplicatie_salon\Tema 4\bin\Debug\Tema 4.exe
+D:\Facultate\Anul_2\Semestrul_2\PIU\Aplicatie_salon\Tema 4\bin\Debug\Tema 4.pdb
+D:\Facultate\Anul_2\Semestrul_2\PIU\Aplicatie_salon\Tema 4\obj\Debug\Tema 4.csproj.AssemblyReference.cache
+D:\Facultate\Anul_2\Semestrul_2\PIU\Aplicatie_salon\Tema 4\obj\Debug\Tema 4.csproj.CoreCompileInputs.cache
+D:\Facultate\Anul_2\Semestrul_2\PIU\Aplicatie_salon\Tema 4\obj\Debug\Tema 4.exe
+D:\Facultate\Anul_2\Semestrul_2\PIU\Aplicatie_salon\Tema 4\obj\Debug\Tema 4.pdb

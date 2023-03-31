@@ -14,11 +14,16 @@ namespace Aplicatie_salon
         static void Main(string[] args)
         {
             Angajat angajat = new Angajat();
+            Serviciu serviciu = new Serviciu();
             string numeFisier = "date1.txt";
+            string numeFisier2 = "date2.txt";
             //  string numeFisier = ConfigurationManager.AppSettings["NumeFisier"];
             Administrare_FisierText adminAngajat = new Administrare_FisierText(numeFisier);
+            Administrare_FisierText adminServiciu = new Administrare_FisierText(numeFisier2);
             List<Angajat> SALON = new List<Angajat>();
+            List<Serviciu> SERVICIU = new List<Serviciu>();
             int nrAngajat = 0;
+            int nrServiciu = 0;
             string optiune;
             do
             {
@@ -26,6 +31,12 @@ namespace Aplicatie_salon
                 Console.WriteLine("A. Afisare angajat: ");
                 Console.WriteLine("F. Afisare angajat din fisier: ");
                 Console.WriteLine("S. Salvare angajat in fisier: ");
+                Console.WriteLine("C. Cautare angajat dupa nume: ");
+                Console.WriteLine("J. Introducere informatii serviciu: ");
+                Console.WriteLine("K. Afisare serviciu: ");
+                Console.WriteLine("L. Afisare serviciu din fisier: ");
+                Console.WriteLine("M. Salvare serviciu in fisier: ");
+                Console.WriteLine("N. Cautare serviciu: ");
                 Console.WriteLine("X. Inchidere program");
                 Console.WriteLine("Alegeti o optiune");
                 optiune = Console.ReadLine().Trim();
@@ -40,7 +51,7 @@ namespace Aplicatie_salon
                         string Prenume = Console.ReadLine();
                         Console.WriteLine("Introdu functia angajatului {0}:", idAngajati);
                         string Functia = Console.ReadLine();
-                        Console.Write("Introdu numarul de telefon al angajatului {0}:", idAngajati);
+                        Console.WriteLine("Introdu numarul de telefon al angajatului {0}:", idAngajati);
                         string Nr_Telefon = Console.ReadLine();
                         Console.WriteLine("Introdu salariul angajatului {0}:", idAngajati);
                         int Salariu = Convert.ToInt32(Console.ReadLine());
@@ -49,7 +60,6 @@ namespace Aplicatie_salon
                         DateTime DataAngajarii = DateTime.ParseExact(data, "yyyy-MM-dd", null);
                         angajat = new Angajat(idAngajati, Nume, Prenume, Functia, Salariu, Nr_Telefon, DataAngajarii);
                         SALON.Add(angajat);
-                        nrAngajat++;
 
                         break;
                     case "A":
@@ -73,6 +83,64 @@ namespace Aplicatie_salon
                         }
 
                         break;
+                    case "C":
+                        Console.WriteLine("Ce angajat doriti sa cautati? (Nume complet) ");
+                        string nume=Console.ReadLine();
+                        for(int i=0;i<SALON.Count; i++)
+                        {
+                            if(SALON[i].CautareDupaNume(nume) == true)
+                            {
+                                Console.WriteLine("Angajatul a fost gasit");
+                                break;
+                            }
+                            else
+                            {
+                                continue;
+                            }
+                        }    
+                        break;
+                    case "J":
+                        int idServiciu = nrServiciu + 1;
+                        Console.WriteLine("Introdu numele serviciului {0}:", idServiciu);
+                        string NumeServiciu= Console.ReadLine();
+                        Console.WriteLine("Introdu durata serviciului (minute) {0}: ", idServiciu);
+                        int Durata = Convert.ToInt32(Console.ReadLine());
+                        Console.WriteLine("Introdu pretul serviciului (lei) {0}:", idServiciu);
+                        int Pret = Convert.ToInt32(Console.ReadLine());
+                        serviciu = new Serviciu (idServiciu, NumeServiciu, Durata, Pret);
+                        SERVICIU.Add(serviciu);
+                        break;
+                    case "K":
+                        Console.WriteLine(string.Join("\n", SERVICIU));
+                        break;
+                    case "L":
+                        SERVICIU = adminServiciu.GetServiciu(out nrServiciu);
+                        Console.WriteLine(string.Join("\n", SERVICIU));
+                        break;
+                    case "M":
+                        idServiciu = nrServiciu + 1;
+                        nrServiciu++;
+                        for (int i = 0; i < SERVICIU.Count; i++)
+                        {
+                            adminServiciu.AddServiciu(SERVICIU[i]);
+                        }
+                        break;
+                    case "N":
+                        Console.WriteLine("Ce serviciu cautati? ");
+                        string numeser = Console.ReadLine();
+                        for (int i = 0; i < SERVICIU.Count; i++)
+                        {
+                            if (SERVICIU[i].CautareDupaNume(numeser) == true)
+                            {
+                                Console.WriteLine("Serviciul a fost gasit");
+                                break;
+                            }
+                            else
+                            {
+                                continue;
+                            }
+                        }
+                        break;
                     case "X":
                         return;
                     default:
@@ -81,29 +149,42 @@ namespace Aplicatie_salon
                 }
 
 
-                } while (optiune.ToUpper() != "X") ;
+            } while (optiune.ToUpper() != "X");
 
-                Console.ReadKey();
-            }
+            Console.ReadKey();
+        }
 
         public static void AfisareAngajati(Angajat[] angajat, int nrAngajat)
         {
             Console.WriteLine("Angajatii sunt:");
-                for (int contor = 0; contor < nrAngajat; contor++)
-                {
-                    string infoAngajat = string.Format("Angajatul cu id-ul #{0} are numele {1}, prenumele {2},functia {3},, salariul {4}, s-a angajat la data {5} si are numarul de telefon {7}.",
-                    angajat[contor].ID_AN,
-                    angajat[contor].Nume ?? "NECUNOSCUT",
-                    angajat[contor].Prenume ?? "NECUNOSCUT",
-                    angajat[contor].Functie ?? "NECUNOSCUT",
-                    angajat[contor].Salariu.ToString() ?? "NECUNOSCUT",
-                    angajat[contor].DataAngajarii.ToString() ?? "NECUNOSCUT",
-                    angajat[contor].Nr_Telefon.ToString() ?? "NECUNOSCUT");
-                    Console.WriteLine(infoAngajat);
-
-
-                }
+            for (int contor = 0; contor < nrAngajat; contor++)
+            {
+                string infoAngajat = string.Format("Angajatul cu id-ul #{0} are numele {1}, prenumele {2},functia {3},, salariul {4}, s-a angajat la data {5} si are numarul de telefon {7}.",
+                angajat[contor].ID_AN,
+                angajat[contor].Nume ?? "NECUNOSCUT",
+                angajat[contor].Prenume ?? "NECUNOSCUT",
+                angajat[contor].Functie ?? "NECUNOSCUT",
+                angajat[contor].Salariu.ToString() ?? "NECUNOSCUT",
+                angajat[contor].DataAngajarii.ToString() ?? "NECUNOSCUT",
+                angajat[contor].Nr_Telefon.ToString() ?? "NECUNOSCUT");
+                Console.WriteLine(infoAngajat);
+            }
         }
-        
+        public static void AfisareServicii(Serviciu[] serviciu, int nrServiciu)
+        {
+            Console.WriteLine("Serviciile sunt:");
+            for (int contor = 0; contor < nrServiciu; contor++)
+            {
+                string infoAngajat = string.Format("Serviciul cu id-ul #{0} are numele {1}, durata {2} si pretul {3}",
+                serviciu[contor].Id_Ser,
+                serviciu[contor].NumeServiciu ?? "NECUNOSCUT",
+                serviciu[contor].Durata.ToString() ?? "NECUNOSCUT",
+                serviciu[contor].Pret.ToString() ?? "NECUNOSCUT");
+                Console.WriteLine(infoAngajat);
+
+
+            }
+        }
+
     }
 }
