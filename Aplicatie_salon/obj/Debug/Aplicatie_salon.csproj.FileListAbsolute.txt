@@ -10,3 +10,5 @@ D:\Facultate\Anul_2\Semestrul_2\PIU\Aplicatie_salon\Aplicatie_salon\bin\Debug\Li
 D:\Facultate\Anul_2\Semestrul_2\PIU\Aplicatie_salon\Aplicatie_salon\obj\Debug\Aplicatie_salon.csproj.CopyComplete
 D:\Facultate\Anul_2\Semestrul_2\PIU\Aplicatie_salon\Aplicatie_salon\obj\Debug\Aplicatie_salon.exe
 D:\Facultate\Anul_2\Semestrul_2\PIU\Aplicatie_salon\Aplicatie_salon\obj\Debug\Aplicatie_salon.pdb
+D:\Facultate\Anul_2\Semestrul_2\PIU\Aplicatie_salon\Aplicatie_salon\obj\Debug\Aplicatie_salon.Form1.resources
+D:\Facultate\Anul_2\Semestrul_2\PIU\Aplicatie_salon\Aplicatie_salon\obj\Debug\Aplicatie_salon.csproj.GenerateResource.cache

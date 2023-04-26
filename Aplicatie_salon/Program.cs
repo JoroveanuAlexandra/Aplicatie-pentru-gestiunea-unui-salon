@@ -57,8 +57,16 @@ namespace Aplicatie_salon
                         int Salariu = Convert.ToInt32(Console.ReadLine());
                         Console.WriteLine("Introdu data angajarii angajatului {0}:", idAngajati);
                         string data = Console.ReadLine();
-                        DateTime DataAngajarii = DateTime.ParseExact(data, "yyyy-MM-dd", null);
-                        angajat = new Angajat(idAngajati, Nume, Prenume, Functia, Salariu, Nr_Telefon, DataAngajarii);
+                        DateTime DataAngajarii = DateTime.ParseExact(data, "dd.mm.yyyy", null);
+                        Console.WriteLine("Introduceti tipul angajatului:");
+                        Console.WriteLine("0-part_time\n " +
+                            "1-full_time\n" +
+                            "2-cursant\n " +
+                            "3-practica\n " +
+                            "4-voluntar\n");
+                        int TipA = Convert.ToInt32(Console.ReadLine());
+                        angajat = new Angajat(idAngajati, Nume, Prenume, Functia, Salariu, Nr_Telefon, DataAngajarii, TipA);
+                       
                         SALON.Add(angajat);
 
                         break;
@@ -107,7 +115,15 @@ namespace Aplicatie_salon
                         int Durata = Convert.ToInt32(Console.ReadLine());
                         Console.WriteLine("Introdu pretul serviciului (lei) {0}:", idServiciu);
                         int Pret = Convert.ToInt32(Console.ReadLine());
-                        serviciu = new Serviciu (idServiciu, NumeServiciu, Durata, Pret);
+                        Console.WriteLine("Introduceti tipul serviciului:");
+                        Console.WriteLine("0-bob lung\n" +
+                            "1-bob scurt\n" +
+                            "2-scari\n" +
+                            "3-cu breton=3\n" +
+                            "4-in straturi=4\n" +
+                            "5-pixie\n");
+                        int TipS = Convert.ToInt32(Console.ReadLine());
+                        serviciu = new Serviciu(idServiciu, NumeServiciu, Durata, Pret, TipS);
                         SERVICIU.Add(serviciu);
                         break;
                     case "K":
