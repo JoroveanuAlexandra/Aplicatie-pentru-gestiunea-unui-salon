@@ -4,8 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using LibrarieModele;
-using AdministrareFisier;
-using static AdministrareFisier.Administrare_fisier;
+using  NivelStocare;
+using System.Windows.Forms;
 
 namespace Aplicatie_salon
 {
@@ -18,8 +18,12 @@ namespace Aplicatie_salon
             string numeFisier = "date1.txt";
             string numeFisier2 = "date2.txt";
             //  string numeFisier = ConfigurationManager.AppSettings["NumeFisier"];
-            Administrare_FisierText adminAngajat = new Administrare_FisierText(numeFisier);
-            Administrare_FisierText adminServiciu = new Administrare_FisierText(numeFisier2);
+            AdministrareFisierText adminAngajat = new AdministrareFisierText(numeFisier);
+            AdministrareFisierText adminServiciu = new AdministrareFisierText(numeFisier2);
+            Application.EnableVisualStyles();
+            Application.SetCompatibleTextRenderingDefault(false);
+            Application.Run(new Form());
+
             List<Angajat> SALON = new List<Angajat>();
             List<Serviciu> SERVICIU = new List<Serviciu>();
             int nrAngajat = 0;
@@ -49,8 +53,12 @@ namespace Aplicatie_salon
                         string Nume = Console.ReadLine();
                         Console.WriteLine("Introdu prenumele angajatului {0}: ", idAngajati);
                         string Prenume = Console.ReadLine();
-                        Console.WriteLine("Introdu functia angajatului {0}:", idAngajati);
-                        string Functia = Console.ReadLine();
+                        Console.WriteLine("Introdu functia angajatului {0}:");
+                        Console.WriteLine("0-coafor\n" +
+                                           "1-cosmetica\n" +
+                                           "2-manichiura\n" +
+                                           "3-manager\n");
+                        int TipF = Convert.ToInt32(Console.ReadLine());
                         Console.WriteLine("Introdu numarul de telefon al angajatului {0}:", idAngajati);
                         string Nr_Telefon = Console.ReadLine();
                         Console.WriteLine("Introdu salariul angajatului {0}:", idAngajati);
@@ -58,14 +66,7 @@ namespace Aplicatie_salon
                         Console.WriteLine("Introdu data angajarii angajatului {0}:", idAngajati);
                         string data = Console.ReadLine();
                         DateTime DataAngajarii = DateTime.ParseExact(data, "dd.mm.yyyy", null);
-                        Console.WriteLine("Introduceti tipul angajatului:");
-                        Console.WriteLine("0-part_time\n " +
-                            "1-full_time\n" +
-                            "2-cursant\n " +
-                            "3-practica\n " +
-                            "4-voluntar\n");
-                        int TipA = Convert.ToInt32(Console.ReadLine());
-                        angajat = new Angajat(idAngajati, Nume, Prenume, Functia, Salariu, Nr_Telefon, DataAngajarii, TipA);
+                        angajat = new Angajat(idAngajati, Nume, Prenume, TipF, Salariu, Nr_Telefon, DataAngajarii);
                        
                         SALON.Add(angajat);
 
@@ -79,7 +80,7 @@ namespace Aplicatie_salon
                         */
                         break;
                     case "F":
-                        SALON = adminAngajat.GetAngajat(out nrAngajat);
+                       // SALON = adminAngajat.GetAngajat(out nrAngajat);
                         Console.WriteLine(string.Join("\n", SALON));
                         break;
                     case "S":
@@ -110,7 +111,7 @@ namespace Aplicatie_salon
                     case "J":
                         int idServiciu = nrServiciu + 1;
                         Console.WriteLine("Introdu numele serviciului {0}:", idServiciu);
-                        string NumeServiciu= Console.ReadLine();
+                        string NumeServiciu = Console.ReadLine();
                         Console.WriteLine("Introdu durata serviciului (minute) {0}: ", idServiciu);
                         int Durata = Convert.ToInt32(Console.ReadLine());
                         Console.WriteLine("Introdu pretul serviciului (lei) {0}:", idServiciu);
@@ -179,7 +180,7 @@ namespace Aplicatie_salon
                 angajat[contor].ID_AN,
                 angajat[contor].Nume ?? "NECUNOSCUT",
                 angajat[contor].Prenume ?? "NECUNOSCUT",
-                angajat[contor].Functie ?? "NECUNOSCUT",
+                angajat[contor].TipFunctie.ToString() ?? "NECUNOSCUT",
                 angajat[contor].Salariu.ToString() ?? "NECUNOSCUT",
                 angajat[contor].DataAngajarii.ToString() ?? "NECUNOSCUT",
                 angajat[contor].Nr_Telefon.ToString() ?? "NECUNOSCUT");

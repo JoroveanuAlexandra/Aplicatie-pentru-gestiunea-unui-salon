@@ -1,7 +1,7 @@
 ﻿
-namespace Aplicatie_salon
+namespace InterfataUtilizator
 {
-    partial class Form1
+    partial class FormAngajati
     {
         /// <summary>
         /// Required designer variable.
@@ -29,36 +29,35 @@ namespace Aplicatie_salon
         /// </summary>
         private void InitializeComponent()
         {
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.btnInapoi = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // dataGridView1
+            // btnInapoi
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(56, 24);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(732, 150);
-            this.dataGridView1.TabIndex = 0;
+            this.btnInapoi.Location = new System.Drawing.Point(356, 364);
+            this.btnInapoi.Name = "btnInapoi";
+            this.btnInapoi.Size = new System.Drawing.Size(75, 23);
+            this.btnInapoi.TabIndex = 0;
+            this.btnInapoi.Text = "Inapoi";
+            this.btnInapoi.UseVisualStyleBackColor = true;
+            this.btnInapoi.Click += new System.EventHandler(this.btnInapoi_Click);
             // 
-            // Form1
+            // FormAngajati
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.dataGridView1);
-            this.Name = "Form1";
-            this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.Controls.Add(this.btnInapoi);
+            this.Name = "FormAngajati";
+            this.Text = "FormAngajati";
+            this.Load += new System.EventHandler(this.FormAngajati_Load);
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Button btnInapoi;
     }
 }

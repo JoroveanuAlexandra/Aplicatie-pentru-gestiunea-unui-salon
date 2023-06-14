@@ -13,6 +13,7 @@ namespace LibrarieModele
         scari = 2,
         cu_breton = 3,
         in_straturi = 4,
-        pixie = 5
+        pixie = 5,
+        nimic = 6
     }
 }

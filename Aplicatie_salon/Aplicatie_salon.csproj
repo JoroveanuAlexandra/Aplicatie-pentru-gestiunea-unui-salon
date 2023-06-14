@@ -45,12 +45,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -58,19 +52,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\AdministrareFisier\AdministrareFisier.csproj">
-      <Project>{b60d70ff-1f99-4e32-b956-0a0a45252dc1}</Project>
-      <Name>AdministrareFisier</Name>
-    </ProjectReference>
     <ProjectReference Include="..\LibrarieModele\LibrarieModele.csproj">
       <Project>{576754de-d761-474e-ac1b-6a61fb6d050f}</Project>
       <Name>LibrarieModele</Name>
     </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
+    <ProjectReference Include="..\NivelStocare\NivelStocare.csproj">
+      <Project>{01954bd2-b598-466c-b65b-e779f81fc639}</Project>
+      <Name>NivelStocare</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

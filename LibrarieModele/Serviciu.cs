@@ -20,14 +20,14 @@ namespace LibrarieModele
         public string NumeServiciu { get; set; }
         public int Durata { get; set; }
         public int Pret { get; set; }
-        public TipTunsoare TipTunsoare { get; set; }
+        public TipTunsoare Tip_Tunsoare { get; set; }
         public Serviciu(int Id_Ser, string NumeServiciu, int Durata, int Pret, int tip)
         {
             this.Id_Ser = Id_Ser;
             this.NumeServiciu = NumeServiciu;
             this.Durata = Durata;
             this.Pret = Pret;
-            this.TipTunsoare = (TipTunsoare)tip;
+            Tip_Tunsoare = (TipTunsoare)tip;
 
         }
         public Serviciu()
@@ -42,7 +42,7 @@ namespace LibrarieModele
                             (NumeServiciu ?? "NECUNOSCUT"),
                              (Durata.ToString() ?? "NECUNOSCUT"),
                              (Pret.ToString() ?? "NECUNOSCUT"),
-                             (TipTunsoare.ToString() ?? "NECUNOSCUT"));
+                             (Tip_Tunsoare.ToString() ?? "NECUNOSCUT"));
             return info;
         }
 
@@ -53,7 +53,7 @@ namespace LibrarieModele
                             (NumeServiciu ?? "NECUNOSCUT"),
                              (Durata.ToString() ?? "NECUNOSCUT"),
                              (Pret.ToString() ?? "NECUNOSCUT"),
-                             (TipTunsoare.ToString() ?? "NECUNOSCUT"));
+                             (Tip_Tunsoare.ToString() ?? "NECUNOSCUT"));
             return info;
         }
         public string ConversieLaSir_PentruFisier()
@@ -64,7 +64,7 @@ namespace LibrarieModele
                 (NumeServiciu ?? "NECUNOSCUT"),
                  (Durata.ToString() ?? "NECUNOSCUT"),
                  (Pret.ToString() ?? "NECUNOSCUT"),
-                 (TipTunsoare.ToString() ?? "NECUNOSCUT"));
+                 (Tip_Tunsoare.ToString() ?? "NECUNOSCUT"));
             return obiectServiciiPentruFisier;
 
         }
@@ -76,7 +76,7 @@ namespace LibrarieModele
             Console.WriteLine(dateFisier[DURATA]);
             Durata = Convert.ToInt32(dateFisier[DURATA]);
             Pret = Convert.ToInt32(dateFisier[PRET]);
-            TipTunsoare = (TipTunsoare)Convert.ToInt32(dateFisier[TIP_TUNSOARE]);
+            Tip_Tunsoare = (TipTunsoare)Enum.Parse(typeof(TipTunsoare), dateFisier[TIP_TUNSOARE]);
 
         }
         public bool CautareDupaNume(string NumeComplet)

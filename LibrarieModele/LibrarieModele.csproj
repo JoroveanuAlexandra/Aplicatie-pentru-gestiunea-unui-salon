@@ -42,7 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Angajat.cs" />
-    <Compile Include="TipAngajat.cs" />
+    <Compile Include="TipFunctie.cs" />
     <Compile Include="Programare.cs" />
     <Compile Include="Serviciu.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

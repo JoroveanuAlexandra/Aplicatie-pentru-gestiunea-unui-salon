@@ -1,2 +1,1 @@
-1;tuns;45;20
-2;masaj;15;200
+2;make-up;90;100;scari

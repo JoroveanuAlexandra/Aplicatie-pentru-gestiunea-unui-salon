@@ -1,0 +1,10 @@
+D:\Facultate\Anul_2\Semestrul_2\PIU\Aplicatie_salon\NivelStocare\bin\Debug\NivelStocare.exe.config
+D:\Facultate\Anul_2\Semestrul_2\PIU\Aplicatie_salon\NivelStocare\bin\Debug\NivelStocare.exe
+D:\Facultate\Anul_2\Semestrul_2\PIU\Aplicatie_salon\NivelStocare\bin\Debug\NivelStocare.pdb
+D:\Facultate\Anul_2\Semestrul_2\PIU\Aplicatie_salon\NivelStocare\bin\Debug\LibrarieModele.dll
+D:\Facultate\Anul_2\Semestrul_2\PIU\Aplicatie_salon\NivelStocare\bin\Debug\LibrarieModele.pdb
+D:\Facultate\Anul_2\Semestrul_2\PIU\Aplicatie_salon\NivelStocare\obj\Debug\NivelStocare.csproj.AssemblyReference.cache
+D:\Facultate\Anul_2\Semestrul_2\PIU\Aplicatie_salon\NivelStocare\obj\Debug\NivelStocare.csproj.CoreCompileInputs.cache
+D:\Facultate\Anul_2\Semestrul_2\PIU\Aplicatie_salon\NivelStocare\obj\Debug\NivelStocare.csproj.CopyComplete
+D:\Facultate\Anul_2\Semestrul_2\PIU\Aplicatie_salon\NivelStocare\obj\Debug\NivelStocare.exe
+D:\Facultate\Anul_2\Semestrul_2\PIU\Aplicatie_salon\NivelStocare\obj\Debug\NivelStocare.pdb

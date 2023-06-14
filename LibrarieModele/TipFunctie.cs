@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace LibrarieModele
 {
-    public enum TipAngajat
+    public enum TipFunctie
     {
-        part_time = 0,
-        full_time = 1,
-        cursant = 2,
-        practica = 3,
-        voluntar = 4
+        coafor = 0,
+        cosmetica= 1,
+        manichiura = 2,
+        manager=3
+       
 
     }
 }

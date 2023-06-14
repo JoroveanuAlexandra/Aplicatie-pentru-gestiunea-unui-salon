@@ -1,0 +1,10 @@
+1;tuns;60;90;bob_lung
+1;tuns;60;90;bob_scurt
+2;tuns;60;90;scari
+3;tuns;60;90;cu_breton
+4;tuns;60;90;in_straturi
+5;tuns;60;90;pixie
+6;vopsit;90;100;nimic
+7;machiaj;90;120;nimic
+8;manichiura;60;100;nimic
+9;pedichiura;60;100;nimic
